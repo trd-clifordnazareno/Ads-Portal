@@ -148,6 +148,11 @@ class Login_api extends MX_Controller {
 
 
 	public function get_client_contract_id_api($data){
+		/*foreach($data as $client_contract_id){
+			$contract_client_id = $client_contract_id;
+		}*/
+		/*
+		pwede sad ne gamitun using json to php array*/
 		$data_info = json_decode($data);
 		$contract_client_id = $data_info->client_contract_id;
 		$curl = curl_init();

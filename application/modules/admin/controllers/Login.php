@@ -131,10 +131,17 @@ class Login extends MX_Controller {
 				   $client_contract_id_json['client_contract_id'] = $get_client_contract_id;
 
 
-
+///////////
 					$client_contract_id_json_data = json_encode($client_contract_id_json);
 				   $make_session_inf = modules::run('api/Login_api/get_client_contract_id_api', $client_contract_id_json_data);
 				   $decode_make_session_inf_data = json_decode($make_session_inf);
+				   foreach($decode_make_session_inf_data as $decode_make_session_inf_data_data => $key){
+					   $check_user = $key->enabled;
+					   $usertype = $key->usertype;
+					   $user_id = $key->contract_client_id;
+					   $client_contract_number = $key->contract_number;
+				   break;
+				   }
 				   /*$a = json_encode($decode_make_session_inf_data);
 				   $b = json_decode($a);
 				   echo $b->contract_client_id;exit;*/
@@ -145,7 +152,7 @@ class Login extends MX_Controller {
 
 				   //end calling api
 			//$check_user = Client_Account_Data_Model::getSearch(array('cad.contract_client_id ='=>$get_client_contract_id),"",array(),true);
-							if($check_user){
+							if($check_user == 1){
 								foreach($check_user as $check_user_data){
 									$usertype = $check_user_data->usertype;
 									$user_id = $check_user_data->contract_client_id;
