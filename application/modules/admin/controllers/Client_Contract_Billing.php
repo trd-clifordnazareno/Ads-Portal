@@ -52,12 +52,30 @@ class Client_Contract_Billing extends MX_Controller {
 				}
         }
         
-        $client_contract_id = $this->uri->rsegment(4);
+        $client_contract_id = $user_id;
         $client_contract_number = $this->uri->rsegment(5);
         $client_name = $this->uri->rsegment(6);
         $explode_client_name = explode("%20",$client_name);
         $implode_client_name = implode("_",$explode_client_name);
-        $get_client_contarct_monthly_billing['get_client_contarct_monthly_billing'] = Client_Contract_Billing_Model::getSearch(array('ccb.client_contract_id ='=>$client_contract_id, 'ccb.client_contract_code ='=>$client_contract_number),"",array(),true);
+
+
+
+        //api call
+
+
+        $data_api['client_contract_id_api'] = $client_contract_id;
+        $data_api['client_contract_number_api'] = $client_contract_number;
+        $data_api['client_name_api'] = $client_name;
+        $data_api['explode_client_name_api'] = $explode_client_name;
+        $data_api['implode_client_name_api'] = $implode_client_name;
+        $data_encode = json_encode($data_api);
+        $data_from_api = modules::run('api/Client_Contract_Billing_Data_Api/create_monthly_billing_api', $data_encode);
+        $data_decode = json_decode($data_from_api);
+        ///var_dump($data_decode);exit;
+
+        //end call api
+        //$get_client_contarct_monthly_billing['get_client_contarct_monthly_billing'] = Client_Contract_Billing_Model::getSearch(array('ccb.client_contract_id ='=>$client_contract_id, 'ccb.client_contract_code ='=>$client_contract_number),"",array(),true);
+        $get_client_contarct_monthly_billing['get_client_contarct_monthly_billing'] = $data_decode;
         $get_client_contarct_monthly_billing['client_name'] = $implode_client_name;
 
 
