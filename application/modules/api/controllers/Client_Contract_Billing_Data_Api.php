@@ -19,18 +19,20 @@ class Client_Contract_Billing_Data_Api extends MX_Controller {
         //$this->load->view('welcome_message');
     }
     public function create_monthly_billing_api($data){
-$data = json_decode($data);
-$client_contract_id_api = $data->client_contract_id_api;
-$client_contract_number_api = $data->client_contract_number_api;
-$client_name_api = $data->client_name_api;
-$explode_client_name_api = $data->explode_client_name_api;
-$implode_client_name_api = $data->implode_client_name_api;
+        $data = json_decode($data);
+        $client_contract_id_api = $data->client_contract_id_api;
+        $client_contract_number_api = $data->client_contract_number_api;
+        $client_name_api = $data->client_name_api;
+        $explode_client_name_api = $data->explode_client_name_api;
+        $implode_client_name_api = $data->implode_client_name_api;
 
-$curl = curl_init();
-		$curl = curl_init();
+        $curl = curl_init();
+        $curl = curl_init();
+        
+        $base_url = base_url();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "http://192.168.88.75/rmniportal/index.php/api/Client_Contract_Billing_Data_Api/create_monthly_billing_api_request?client_contract_id_api=$client_contract_id_api&client_contract_number_api=$client_contract_number_api&client_name_api=$client_name_api&explode_client_name_api=$explode_client_name_api&implode_client_name_api=$implode_client_name_api&",
+        CURLOPT_URL => "$base_url/index.php/api/Client_Contract_Billing_Data_Api/create_monthly_billing_api_request?client_contract_id_api=$client_contract_id_api&client_contract_number_api=$client_contract_number_api&client_name_api=$client_name_api&explode_client_name_api=$explode_client_name_api&implode_client_name_api=$implode_client_name_api&",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
