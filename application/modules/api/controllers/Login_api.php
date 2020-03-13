@@ -88,8 +88,11 @@ class Login_api extends MX_Controller {
 
 		  $curl = curl_init();
 
+
+		  $base_url = base_url();
+
 			curl_setopt_array($curl, array(
-			CURLOPT_URL => "http://192.168.88.75/rmniportal/index.php/api/login_api/login_api_request?username=$username&password=$password&",
+			CURLOPT_URL => "$base_url/index.php/api/login_api/login_api_request?username=$username&password=$password&",
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => "",
 			CURLOPT_MAXREDIRS => 10,
@@ -116,8 +119,11 @@ class Login_api extends MX_Controller {
 		$curl = curl_init();
 		$curl = curl_init();
 
+
+		$base_url = base_url();
+
 			curl_setopt_array($curl, array(
-			CURLOPT_URL => "http://192.168.88.75/rmniportal/index.php/api/login_api/transact_login_api_request?username=$username&password=$password&",
+			CURLOPT_URL => "$base_url/index.php/api/login_api/transact_login_api_request?username=$username&password=$password&",
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => "",
 			CURLOPT_MAXREDIRS => 10,
@@ -158,8 +164,11 @@ class Login_api extends MX_Controller {
 		$curl = curl_init();
 		$curl = curl_init();
 
+
+		$base_url = base_url();
+
 			curl_setopt_array($curl, array(
-			CURLOPT_URL => "http://192.168.88.75/rmniportal/index.php/api/login_api/contract_client_id_api_request?contract_client_id=$contract_client_id&",
+			CURLOPT_URL => "$base_url/index.php/api/login_api/contract_client_id_api_request?contract_client_id=$contract_client_id&",
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => "",
 			CURLOPT_MAXREDIRS => 10,
