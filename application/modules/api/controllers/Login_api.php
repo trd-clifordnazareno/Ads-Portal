@@ -212,13 +212,7 @@ class Login_api extends MX_Controller {
 		}else{
 			echo "ops you have no creditials {\"username\":\"empty\", \"password\":\"empty\"}";
 		}
-		//end official api link GET
-		/*$check_data = json_encode($data);
-		if($check_data == "null"){
-			echo "ops you have no creditials {\"username\":\"empty\", \"password\":\"empty\"}";
-		}else{
-			echo $check_data;
-		}*/
+		
 	}
 	public function transact_login_api_request(){
 		
