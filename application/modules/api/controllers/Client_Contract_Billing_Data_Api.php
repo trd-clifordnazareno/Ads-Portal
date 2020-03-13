@@ -56,7 +56,7 @@ class Client_Contract_Billing_Data_Api extends MX_Controller {
 
     public function create_monthly_billing_api_request(){
         $client_contract_id = $_GET['client_contract_id_api'];
-        $client_contract_number = "111-111-111";
+        $client_contract_number = $_GET['client_contract_number_api'];
         $get_client_contarct_monthly_billing = Client_Contract_Billing_Model::getSearch(array('ccb.client_contract_id ='=>$client_contract_id, 'ccb.client_contract_code ='=>$client_contract_number),"",array(),true);
         echo json_encode($get_client_contarct_monthly_billing);
     }
