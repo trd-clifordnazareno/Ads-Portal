@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.88.75/rmniportal';
+$config['base_url'] = 'richmedia.com.ph/rmniportal_sample/index.php/admin/home';
 
 /*
 |--------------------------------------------------------------------------
