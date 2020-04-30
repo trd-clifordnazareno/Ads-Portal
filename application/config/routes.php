@@ -50,9 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-/*require_once('confg/Load_Sys_Con.php');
+require_once('confg/Load_Sys_Con.php');
 $a = new Load_Sys_Con();
-$a->make_folder_request();*/
+$a->make_folder_request();
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
