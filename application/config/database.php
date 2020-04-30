@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'rmni_portal',
+	'hostname' => 'ftp.richmedia.com.ph',
+	'username' => 'richmed_rmni_admin',
+	'password' => 'rmni_admin',
+	'database' => 'richmed_rmni_portal',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
